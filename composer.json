@@ -6,12 +6,15 @@
             "email": "anthonybois73@yahoo.fr"
         }
     ],
+    "minimum-stability" : "dev",
     "require": {
+        "phpunit/phpunit" : "dev-master",
         "doctrine/ORM" : "~2.5"
     },
     "autoload": {
     	"psr-4": {
-    		"Formation\\": "src/"
+    		"Formation\\": "src/",
+            "Formation\\test\\": "test/"
     	}
     }
 }
