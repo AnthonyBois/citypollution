@@ -9,12 +9,13 @@
     "minimum-stability" : "dev",
     "require": {
         "phpunit/phpunit" : "dev-master",
-        "doctrine/ORM" : "~2.5"
+        "doctrine/orm": "~2.5",
+        "satooshi/php-coveralls" : "dev-master"
     },
     "autoload": {
     	"psr-4": {
     		"Formation\\": "src/",
-            "Formation\\test\\": "test/"
+    		"Formation\\Test\\": "test/"
     	}
     }
 }
