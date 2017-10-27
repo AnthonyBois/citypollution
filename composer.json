@@ -1,0 +1,17 @@
+{
+    "name": "bois-a/formation-php-avance",
+    "authors": [
+        {
+            "name": "AnthonyBois",
+            "email": "anthonybois73@yahoo.fr"
+        }
+    ],
+    "require": {
+        "doctrine/ORM" : "~2.5"
+    },
+    "autoload": {
+    	"psr-4": {
+    		"Formation\\": "src/"
+    	}
+    }
+}
