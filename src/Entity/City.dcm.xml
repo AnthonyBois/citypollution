@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="City" table="city">
+    <unique-constraints>
+      <unique-constraint name="city_name" columns="city_name"/>
+      <unique-constraint name="city_api_name" columns="city_api_name"/>
+    </unique-constraints>
+    <id name="cityId" type="integer" column="city_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="cityName" type="string" column="city_name" length="64" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="cityApiName" type="string" column="city_api_name" length="64" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+  </entity>
+</doctrine-mapping>

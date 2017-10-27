@@ -1,0 +1,43 @@
+<?php
+
+
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Api
+ *
+ * @ORM\Table(name="api", uniqueConstraints={@ORM\UniqueConstraint(name="city_id_2", columns={"city_id"}), @ORM\UniqueConstraint(name="city_id", columns={"city_id"})})
+ * @ORM\Entity
+ */
+class Api
+{
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="api_json", type="text", length=65535, nullable=false)
+     */
+    private $apiJson;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="api_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $apiId;
+
+    /**
+     * @var \City
+     *
+     * @ORM\ManyToOne(targetEntity="City")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="city_id", referencedColumnName="city_id")
+     * })
+     */
+    private $city;
+
+
+}
+

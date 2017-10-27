@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Api" table="api">
+    <unique-constraints>
+      <unique-constraint name="city_id_2" columns="city_id"/>
+      <unique-constraint name="city_id" columns="city_id"/>
+    </unique-constraints>
+    <id name="apiId" type="integer" column="api_id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="apiJson" type="text" column="api_json" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <many-to-one field="city" target-entity="City" fetch="LAZY">
+      <join-columns>
+        <join-column name="city_id" referenced-column-name="city_id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
